@@ -1,0 +1,10 @@
+fpga/KR260/KR260_Periodic-AESKeyFinder/
+fpga/KR260/.Xil/
+fpga/AXKU062/AXKU062_Periodic-AESKeyFinder/
+fpga/AXKU062/.Xil/
+fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/
+fpga/AXKU3/hd_visual/
+fpga/AXKU3/.Xil/
+*.jou
+*.log
+

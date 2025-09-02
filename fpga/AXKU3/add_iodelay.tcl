@@ -1,0 +1,47 @@
+set proj_dir [get_property DIRECTORY [current_project]]
+set current_synth_run [current_run -synthesis]
+set proj_name [current_project]
+
+open_run $current_synth_run -name $current_synth_run
+
+startgroup
+
+current_instance [get_cells design_1_i/axi_ethernet_0/inst/mac/inst]
+create_cell -reference LUT5 tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0
+set_property INIT 32'h80000000 [get_cells tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0]
+
+create_cell -reference IDELAYCTRL tri_mode_ethernet_mac_idelayctrl_common_i_rep_0
+create_cell -reference IDELAYCTRL tri_mode_ethernet_mac_idelayctrl_common_i_rep_1
+create_cell -reference IDELAYCTRL tri_mode_ethernet_mac_idelayctrl_common_i_rep_2
+create_cell -reference IDELAYCTRL tri_mode_ethernet_mac_idelayctrl_common_i_rep_3
+
+create_net tri_mode_ethernet_mac_idelayctrl_common_i_0
+create_net tri_mode_ethernet_mac_idelayctrl_common_i_rep_0_0
+connect_net -net tri_mode_ethernet_mac_idelayctrl_common_i_0 -objects {tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0/I0 tri_mode_ethernet_mac_idelayctrl_common_i/RDY}
+
+create_net tri_mode_ethernet_mac_idelayctrl_common_i_rep_1_0
+create_net tri_mode_ethernet_mac_idelayctrl_common_i_rep_2_0
+create_net tri_mode_ethernet_mac_idelayctrl_common_i_rep_3_0
+
+connect_net -net tri_mode_ethernet_mac_idelayctrl_common_i_rep_0_0 -objects {tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0/I1 tri_mode_ethernet_mac_idelayctrl_common_i_rep_0/RDY}
+connect_net -net tri_mode_ethernet_mac_idelayctrl_common_i_rep_1_0 -objects {tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0/I2 tri_mode_ethernet_mac_idelayctrl_common_i_rep_1/RDY}
+connect_net -net tri_mode_ethernet_mac_idelayctrl_common_i_rep_2_0 -objects {tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0/I3 tri_mode_ethernet_mac_idelayctrl_common_i_rep_2/RDY}
+connect_net -net tri_mode_ethernet_mac_idelayctrl_common_i_rep_3_0 -objects {tri_mode_ethernet_mac_idelayctrl_common_i_TOP_AND_0/I4 tri_mode_ethernet_mac_idelayctrl_common_i_rep_3/RDY}
+
+
+##Connect REFCLKs RSTs
+current_instance
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/refclk -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_0/REFCLK]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/idelayctrl_reset -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_0/RST]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/refclk -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_1/REFCLK]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/idelayctrl_reset -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_1/RST]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/refclk -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_2/REFCLK]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/idelayctrl_reset -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_2/RST]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/refclk -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_3/REFCLK]
+connect_net -hierarchical -net design_1_i/axi_ethernet_0/inst/mac/inst/idelayctrl_reset -objects [get_pins -hierarchical tri_mode_ethernet_mac_idelayctrl_common_i_rep_3/RST]
+endgroup
+
+
+write_checkpoint -force -verbose $proj_dir/$proj_name.runs/$current_synth_run/design_1_wrapper
+close_design
+
