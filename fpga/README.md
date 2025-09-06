@@ -30,3 +30,6 @@ cd ./KR260
 vivado -source build.tcl
 ```
 
+ビルドの所要時間は我々の開発環境（Core i9-9990X, 128GB RAM）で1時間から2時間程度です。
+FPGAのビットストリームを生成するために、EthernetのIPコアにはライセンスが必要です。
+ライセンスの詳細は`Vivado Design Suite User Guide: Release Notes, Installation, and Licensing (UG973)`を参照してください。
