@@ -740,3 +740,4 @@ runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /AES
 // Elapsed time: 16 seconds
 selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
 dismissDialog("Re-customize Module Reference"); // m (dialog0)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,443 MB. GUI used memory: 104 MB. Current time: 9/6/25, 7:00:37 PM JST
