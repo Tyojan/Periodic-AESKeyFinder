@@ -13,6 +13,7 @@
 ```bash
 cd ./KR260
 vivado -source mkproj_KR260_Periodic-AESKeyFinder.tcl
+```
 
 ---
 
@@ -26,5 +27,5 @@ vivado -source mkproj_KR260_Periodic-AESKeyFinder.tcl
 ```bash
 cd ./KR260
 vivado -source build.tcl
-
+```
 
