@@ -1988,14 +1988,14 @@
       if(key_hit_128align)
       begin                                   
 //        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h130;
-//        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h140;
-        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h70;               
+        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h140;
+//        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h70;               
       end
       else if(key_hit_64align)
       begin                                   
 //        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h128;
-//        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h138;
-        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h68;               
+        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h138;
+//        key_addr <= TARGET_READ_ADDR + {read_page_counter,12'd0} + {read_index[7:0],4'h0} - 'h68;               
       end
       else if(key_hit_rsa_128align | key_hit_ecdsa_128align | key_hit_pkcs8_128align)
       begin                                   

@@ -7,4 +7,6 @@ fpga/AXKU3/hd_visual/
 fpga/AXKU3/.Xil/
 *.jou
 *.log
+*.raw
 
+evaluation/
