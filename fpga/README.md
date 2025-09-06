@@ -8,7 +8,8 @@
 
 ---
 
-# KR260 プロジェクトの生成と Vivado プロジェクトモード起動
+## プロジェクトの生成
+以下のコマンドはKR260のプロジェクトを生成し、Vivadoの画面を開きます。
 
 ```bash
 cd ./KR260
@@ -17,7 +18,7 @@ vivado -source mkproj_KR260_Periodic-AESKeyFinder.tcl
 
 ---
 
-# Build方法
+## Build方法
 
 プロジェクトを既に開いている場合は、Flow NavigatorからIMPLEMENTATIONメニューの「Run Implementation」を実行してください。
 
