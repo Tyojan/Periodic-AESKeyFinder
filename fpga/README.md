@@ -1,35 +1,37 @@
-# Periodic-AESKeyFinder のソースコード
+# Source Code of Periodic-AESKeyFinder
 
-`KeyFinder` ディレクトリには、Periodic-AESKeyFinder の IP コアを構成する Verilog ソースコードが含まれています。  
-`KR260`、`AXKU062`、`AXKU3` の各ディレクトリには、それぞれ我々が試した FPGA ボードごとのプロジェクトが含まれています。  
+The `KeyFinder` directory contains the Verilog source code that constitutes the IP core of the Periodic-AESKeyFinder.  
+The `KR260`, `AXKU062`, and `AXKU3` directories each contain projects corresponding to the FPGA boards we tested.  
 
-プロジェクトは **「mkproj」で始まる Tcl スクリプト** で記述しています。  
-これらのコードは **Vivado v2023.2.2** で利用可能です。  
+The projects are described using Tcl scripts prefixed with **“mkproj”**.  
+These codes are compatible with **Vivado v2023.2.2**.  
 
 ---
 
-## プロジェクトの生成
-以下のコマンドはKR260のプロジェクトを生成し、Vivadoの画面を開きます。
+## Generate Project 
+The following command generates a project for the KR260 and opens the Vivado GUI:
 
 ```bash
 cd ./KR260
 vivado -source mkproj_KR260_Periodic-AESKeyFinder.tcl
-```
+
 
 ---
 
-## Build方法
 
-プロジェクトを既に開いている場合は、Flow NavigatorからIMPLEMENTATIONメニューの「Run Implementation」を実行してください。
 
-プロジェクトの生成からビルドまで一気に実行するスクリプトも用意しました。
-以下のコマンドはKR260のプロジェクトを生成し、FPGAのImplementationまで実行するコマンドです。
+## Build
+
+If the project is already open, please run *Run Implementation* from the IMPLEMENTATION menu in the Flow Navigator.
+
+We also provide a script that performs both project generation and implementation in one step.  
+The following command generates the KR260 project and runs FPGA implementation:
 
 ```bash
 cd ./KR260
 vivado -source build.tcl
-```
 
-ビルドの所要時間は我々の開発環境（Core i9-9990X, 128GB RAM）で1時間から2時間程度です。
-FPGAのビットストリームを生成するために、EthernetのIPコアにはライセンスが必要です。
-ライセンスの詳細は`Vivado Design Suite User Guide: Release Notes, Installation, and Licensing (UG973)`を参照してください。
+The build process takes approximately 1–2 hours on our development environment (Core i9-9990X, 128GB RAM).
+To generate the FPGA bitstream, a license for the Ethernet IP core is required.
+For licensing details, please refer to the Vivado Design Suite User Guide: Release Notes, Installation, and Licensing (UG973).
+
