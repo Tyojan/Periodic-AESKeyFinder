@@ -14,7 +14,7 @@ The following command generates a project for the KR260 and opens the Vivado GUI
 ```bash
 cd ./KR260
 vivado -source mkproj_KR260_Periodic-AESKeyFinder.tcl
-
+```
 
 ---
 
@@ -30,6 +30,7 @@ The following command generates the KR260 project and runs FPGA implementation:
 ```bash
 cd ./KR260
 vivado -source build.tcl
+```
 
 The build process takes approximately 1–2 hours on our development environment (Core i9-9990X, 128GB RAM).
 To generate the FPGA bitstream, a license for the Ethernet IP core is required.
