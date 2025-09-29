@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        BIN
+Interface          SPIX8
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x00692A67    Sep  8 18:38:55 2025    /home/sawa/ACSAC2025_artifact/fpga/AXKU062/AXKU062_Periodic-AESKeyFinder/AXKU062_Periodic-AESKeyFinder.runs/impl_1/design_1_wrapper.bit

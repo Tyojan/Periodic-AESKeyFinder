@@ -5,8 +5,11 @@ fpga/AXKU062/.Xil/
 fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/
 fpga/AXKU3/hd_visual/
 fpga/AXKU3/.Xil/
+scripts/linux/virt2phys/
+
 *.jou
 *.log
+*.str
 *.raw
 
 evaluation/

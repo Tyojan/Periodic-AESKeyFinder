@@ -601,3 +601,8 @@ set_property top_lib xil_defaultlib [get_filesets sim_1]
 
 add_files -fileset utils_1 -norecurse $origin_dir/tandem.tcl
 set_property STEPS.PLACE_DESIGN.TCL.PRE [ get_files $origin_dir/tandem.tcl -of [get_fileset utils_1] ] [get_runs impl_1]
+
+
+
+#current_bd_design [get_bd_designs design_1]
+#generate_target all [get_files  $origin_dir/AXKU062_Periodic-AESKeyFinder/AXKU062_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd]
