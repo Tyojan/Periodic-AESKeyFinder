@@ -1,0 +1,19 @@
+name: Run Build
+
+on:
+  workflow_dispatch:
+ 
+jobs:
+  run-script:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run script
+        run: |
+          pwd
+          cd fpga/KR260/
+          vivado -mode batch -source build.tcl
+          wait
+
