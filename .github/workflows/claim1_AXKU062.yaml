@@ -16,5 +16,6 @@ jobs:
           cd claim/claim1/
           ./run.sh AXKU062
           wait
+          pwd
           cat AXKU062_Periodic-AESKeyFinder/AXKU062_Periodic-AESKeyFinder.runs/impl_1/design_1_wrapper_utilization_placed.rpt
 
