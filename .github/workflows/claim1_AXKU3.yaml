@@ -13,8 +13,8 @@ jobs:
       - name: Run script
         run: |
           pwd
-          cd fpga/AXKU3/
-          vivado -mode batch -source build.tcl
+          cd claim/claim1/
+          ./run.sh AXKU3
           wait
           cat AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.runs/impl_1/design_1_wrapper_utilization_placed.rpt
 
