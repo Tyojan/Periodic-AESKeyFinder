@@ -4,17 +4,17 @@ This repository contains the source code of Periodic-AESKeyFinder along with aux
 The FPGA source code can be found under the fpga directory.
 The scripts used for investigating key zeroization are located under the scripts directory.
 
+![Periodic-AESKeyFinder](images/Periodic-AESKeyFinder.png)
+
 
 # Project Structure
 
 ```plaintext
 Periodic-AESKeyFinder/
 ├── README.md
-├── artifacts
 ├── claim
 │   └── claim1
 ├── evaluation
-│   ├── AESKeyFinder_vs_Periodic-AESKeyFinder
 │   ├── TLS
 ├── fpga    # FPGA files
 │   ├── AXKU062     # Project file for AXKU062 FPGA board
