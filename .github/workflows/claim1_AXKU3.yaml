@@ -14,7 +14,7 @@ jobs:
         run: |
           pwd
           cd claim/claim1/
-          ./run.sh AXKU3
+          source ./run.sh AXKU3
           wait
           cat AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.runs/impl_1/design_1_wrapper_utilization_placed.rpt
 

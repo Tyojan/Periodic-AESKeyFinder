@@ -14,9 +14,7 @@ jobs:
         run: |
           pwd
           cd claim/claim1/
-          ./run.sh KR260
-          # cd fpga/KR260/
-          # vivado -mode batch -source build.tcl
+          source ./run.sh KR260
           wait
           cat KR260_Periodic-AESKeyFinder/KR260_Periodic-AESKeyFinder.runs/impl_1/design_1_wrapper_utilization_placed.rpt
 
