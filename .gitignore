@@ -11,5 +11,7 @@ scripts/linux/virt2phys/
 *.log
 *.str
 *.raw
+*.pdf
+*.pem
 
 evaluation/
