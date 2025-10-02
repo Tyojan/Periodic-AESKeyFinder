@@ -639,8 +639,8 @@ move_dashboard_gadget -name {methodology_1} -row 2 -col 1
 
 source design_1.tcl
 
-make_wrapper -files [get_files /home/sawa/ACSAC2025_artifact/fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse /home/sawa/ACSAC2025_artifact/fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+make_wrapper -files [get_files $origin_dir/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse $origin_dir/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
 
 set_property source_mgmt_mode None [current_project]
 set_property top design_1_wrapper [current_fileset]
@@ -653,8 +653,8 @@ set_property STEPS.PLACE_DESIGN.ARGS.DIRECTIVE ExtraTimingOpt [get_runs impl_1]
 set_property STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
 set_property STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE ExploreWithAggressiveHoldFix [get_runs impl_1]
 
-generate_target all [get_files  /home/sawa/ACSAC2025_artifact/fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd]
-export_ip_user_files -of_objects [get_files /home/sawa/ACSAC2025_artifact/fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/sawa/ACSAC2025_artifact/fpga/AXKU3/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd]
+generate_target all [get_files  $origin_dir/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files $origin_dir/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] $origin_dir/AXKU3_Periodic-AESKeyFinder/AXKU3_Periodic-AESKeyFinder.srcs/sources_1/bd/design_1/design_1.bd]
 
 set_property STEPS.SYNTH_DESIGN.ARGS.DIRECTIVE AlternateRoutability [get_runs design_1_AESKeyFinder_v1_0_0_0_synth_1]
