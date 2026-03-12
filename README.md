@@ -1,5 +1,7 @@
 # Periodic-AESKeyFinder
 
+This repository is the artifact for the ACSAC 2025 paper "Analysis of Encryption Key Zeroization from System-Wide Perspective" (IEEE Xplore: https://ieeexplore.ieee.org/document/11391761).
+
 This repository contains the source code of Periodic-AESKeyFinder along with auxiliary scripts for analysis.
 The FPGA source code can be found under the fpga directory.
 The scripts used for investigating key zeroization are located under the scripts directory.
@@ -80,4 +82,30 @@ Follow the instructions for downloading and installing Vivado on your system.
 ## License
 "A license for LogiCORE Tri-Mode Ethernet MAC is required. Please refer to [UG973](https://docs.amd.com/r/en-US/ug973-vivado-release-notes-install-license/Release-Notes), and access https://account.amd.com/forms/license/license-form.html
  and follow the instructions."
+
+
+
+## Citation
+
+If you use this tool in research, please cite:
+
+```
+T. Sawa and K. Suzaki, "Analysis of Encryption Key Zeroization from System-Wide Perspective," 2025 IEEE Annual Computer Security Applications Conference (ACSAC), Honolulu, HI, USA, 2025, pp. 1034-1050, doi: 10.1109/ACSAC67867.2025.00084.
+```
+
+BibTeX entry (copyable):
+
+```
+@inproceedings{sawa_acsac2025,
+    author    = {T. Sawa and K. Suzaki},
+    title     = {Analysis of Encryption Key Zeroization from System-Wide Perspective},
+    booktitle = {2025 IEEE Annual Computer Security Applications Conference (ACSAC)},
+    address   = {Honolulu, HI, USA},
+    year      = {2025},
+    pages     = {1034--1050},
+    doi       = {10.1109/ACSAC67867.2025.00084},
+    keywords  = {Forensics, Prevention and mitigation, Linux, ISO Standards, Memory management, Libraries, Registers, Kernel, IEC Standards, Guidelines, AES, zeroization, key management, live memory forensics}
+}
+```
+
 

@@ -13,5 +13,6 @@ scripts/linux/virt2phys/
 *.raw
 *.pdf
 *.pem
+*.pcapng
 
 evaluation/
