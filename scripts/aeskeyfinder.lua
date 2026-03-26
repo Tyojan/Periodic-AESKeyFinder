@@ -25,9 +25,9 @@ KeyAddr = ProtoField.new("Physical Address", "keyfinder.keyaddr", ftypes.BYTES)
 KeyRaw = ProtoField.new("Raw Key", "keyfinder.keyraw", ftypes.BYTES)
 
 
+KeyRaw0 = ProtoField.uint8("keyfinder.keyraw0", "RawKey[0]", base.HEX)
 
-keyfinder_proto.fields = {PacketNo, KeyCount, Cycles, Laps, PacketSize, AESKeyLen, AESKeyBitmap, RSAKeyLen, RSAFldLen, ECDSAKeyLen, ECDSAFldLen, PKCS8KeyLen, PKCS8FldLen, KeyAddr, KeyRaw}
-
+keyfinder_proto.fields = {PacketNo, KeyCount, Cycles, Laps, PacketSize, AESKeyLen, AESKeyBitmap, RSAKeyLen, RSAFldLen, ECDSAKeyLen, ECDSAFldLen, PKCS8KeyLen, PKCS8FldLen, KeyAddr, KeyRaw, KeyRaw0}
 
 function keyfinder_proto.dissector(buffer, pinfo, tree)
     pinfo.cols.protocol = "KeyFinder"
@@ -47,6 +47,9 @@ function keyfinder_proto.dissector(buffer, pinfo, tree)
     subtree:add(Laps, buffer(buflen - 8, 4))
     subtree:add(PacketSize, buffer(buflen - 2, 2))
 
+    local keyraw0 = buffer(key_data_offset + 16, 1):uint()
+    item = subtree:add(KeyRaw0, keyraw0)
+    item:set_hidden()
 
     local main_subtree = subtree:add("Key Information", buffer())
 
